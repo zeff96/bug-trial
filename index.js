@@ -13,7 +13,7 @@ const textEl = document.getElementById('textarea');
 const bodyEl = document.querySelector('body');
 
 hamburgerEl.addEventListener('click', () => {
-  navEl.classList.add('active');
+  navEl.classList.add(active);
 });
 closeEl.addEventListener('click', () => {
   navEl.classList.remove('active');
@@ -140,7 +140,7 @@ cards.forEach((elem) => {
   const tags = document.createElement('ul');
   tags.classList.add('tags');
 
-  cardArray[elem].tech.forEach((item) => {
+  cardArray.tech.forEach((item) => {
     const tagChild = document.createElement('li');
     tagChild.innerHTML = item;
     tags.appendChild(tagChild);
@@ -275,5 +275,5 @@ function getData() {
 
   localStorage.setItem('userInfo', JSON.stringify(userInfo));
 }
-formEl.addEventListener('input', getData);
-formEl.addEventListener('submit', getData);
+formEl.addEventListener('input', getData());
+formEl.addEventListener('submit', getData());
